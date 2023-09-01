@@ -34,6 +34,10 @@ public class ProdutoController {
         this.tabelaProdutos.atualizarProduto(produtoId, dadosAtualizarProduto);
     }
 
+    @DeleteMapping("/{produtoId}")
+    public void removerProdutoNaLoJa(@PathVariable int produtoId){
+        this.tabelaProdutos.removerProduto(produtoId);
+    }
 
 
 
