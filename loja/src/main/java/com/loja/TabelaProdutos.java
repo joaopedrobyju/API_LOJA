@@ -47,7 +47,7 @@ public class TabelaProdutos {
 
 
     /**
-     * Método que busca o Produto pelo se ID
+     * Método que busca o Produto pelo seu ID
      * Caso não encontre vai retornar nulo
      * @param produtoId
      * @return
@@ -62,6 +62,26 @@ public class TabelaProdutos {
         }
         return produtoProcurado;
     }
+
+    public Produto cadastrarNovoPrdouto( Produto novoPrdouto){
+        // 10(Id) - 1(Index) = 9
+        int ultimoIndex = this.produtos.size() - 1;
+
+        // Produto giz = new Produto(10, "Giz de Cera", "Caixa de Giz de Cera de 12 cores da Tilibra", 20.99);
+        Produto ultimoProduto = this.produtos.get(ultimoIndex);
+
+        // 10(Id) + 1(Index) = 11
+        int proximoId = ultimoProduto.getId() + 1;
+
+        novoPrdouto.setId(proximoId);
+        this.produtos.add(novoPrdouto);
+        return novoPrdouto;
+
+    }
+
+
+
+
 
 
 
